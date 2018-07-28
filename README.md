@@ -91,6 +91,6 @@ const myTabSet = new TinyTabs(".tinytabs", myOptions);
 ## TODO
 
 - [ ] Add themes
-- [x] Add accessibility features
+- [ ] Add accessibility features
 - [ ] Add demo page
 - [ ] Add IE11 support via polyfill
