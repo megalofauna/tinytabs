@@ -87,3 +87,9 @@ const myOptions = {
 };
 const myTabSet = new TinyTabs(".tinytabs", myOptions);
 ```
+## TODO
+
+
+1. Add themes
+2. Add additional accessibility features 
+3. Add demo page
