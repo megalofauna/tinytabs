@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tabs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/styles.css">
+</head>
+
+<body>
+
+  <div class="tinytabs">
+    <ul>
+      <li>
+        <a data-tab-triggerTEST class="is-activeTEST" href="#tab1">
+          Tab Trigger 1
+        </a>
+      </li>
+      <li>
+        <a data-tab-triggerTEST href="#tab2">
+          Tab Trigger 2
+        </a>
+      </li>
+      <li>
+        <a data-tab-triggerTEST href="#tab3">
+          Tab Trigger 3
+        </a>
+      </li>
+    </ul>
+
+    <div>
+      <section data-tab-contentTEST hidden id="tab1">
+        <h2>Tab Title 1</h2>
+        <p>Tab Content 1</p>
+      </section>
+
+      <section data-tab-contentTEST hidden id="tab2">
+        <h2>Tab Title 2</h2>
+        <p>Tab Content 2</p>
+      </section>
+
+      <section data-tab-contentTEST hidden id="tab3">
+        <h2>Tab Title 3</h2>
+        <p>Tab Content 3</p>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/js/main.js"></script>
+  <script>
+    const myOptions = {
+      tabTrigger: '[data-tab-triggerTEST]',
+      tabContent: '[data-tab-contentTEST]',
+      tabTriggerActiveClass: 'is-activeTEST'
+
+    }
+    const myTabs = new TinyTabs('.tinytabs', myOptions)
+
+  </script>
+</body>
+
+</html>
