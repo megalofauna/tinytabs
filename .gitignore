@@ -1,6 +1,6 @@
 dist/css/
 src/css/
-node-modules/
+node_modules/
 src/js/ie11-array-from-polyfill.js
 .babelrc
 gulpfile.js
