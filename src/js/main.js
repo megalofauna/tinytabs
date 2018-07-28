@@ -19,6 +19,7 @@ function TinyTabs(tabSelector, options = {}) {
 
   tabContents.forEach(tabContent => {
     tabContent.setAttribute('aria-role', 'tabpanel')
+    tabContent.setAttribute('aria-hidden', "")
   })
 
   tabTriggers.forEach(tabTrigger => {
