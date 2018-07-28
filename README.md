@@ -1,6 +1,6 @@
 # TinyTabs
 
-No-frills tabs in ~450 bytes.
+No-frills tabs in ~450 bytes (minified and gzipped).
 
 ## Markup Requirements
 
