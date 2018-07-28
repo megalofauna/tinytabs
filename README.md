@@ -2,7 +2,7 @@
 
 No-frills tabs in ~560 bytes (minified and gzipped).
 
-Credit goes to  [EJ Mason](http://www.ejmason.com/tabbed-interfaces/) for accessibility features (still a work in progress for TinyTabs).
+Credit goes to [EJ Mason](http://www.ejmason.com/tabbed-interfaces/) for accessibility features (still a work in progress for TinyTabs).
 
 ## Markup Requirements
 
@@ -87,10 +87,10 @@ const myOptions = {
 };
 const myTabSet = new TinyTabs(".tinytabs", myOptions);
 ```
+
 ## TODO
 
-
-1. Add themes
-2. Add accessibility features 
-3. Add demo page
-4. Add IE11 support via polyfill
+- [ ] Add themes
+- [x] Add accessibility features
+- [ ] Add demo page
+- [ ] Add IE11 support via polyfill
