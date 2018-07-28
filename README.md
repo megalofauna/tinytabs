@@ -1,5 +1,3 @@
-[[toc]]
-
 # TinyTabs
 
 No-frills tabs in ~450 bytes.
