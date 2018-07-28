@@ -5,53 +5,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Tabs</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,500" rel="stylesheet">
+  <title>TinyTabs</title>
+  <link href="dist/css/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,500" rel="stylesheet">
 </head>
 
 <body>
+  <div class="demo-container">
+    <div class="tinytabs-minimal">
+      <ul>
+        <li>
+          <a data-tab-trigger class="is-active" href="#tab1">
+            Tab Trigger 1
+          </a>
+        </li>
+        <li>
+          <a data-tab-trigger href="#tab2">
+            Tab Trigger 2
+          </a>
+        </li>
+        <li>
+          <a data-tab-trigger href="#tab3">
+            Tab Trigger 3
+          </a>
+        </li>
+      </ul>
 
-  <div class="tinytabs">
-    <ul>
-      <li>
-        <a data-tab-trigger class="is-active" href="#tab1">
-          Tab Trigger 1
-        </a>
-      </li>
-      <li>
-        <a data-tab-trigger href="#tab2">
-          Tab Trigger 2
-        </a>
-      </li>
-      <li>
-        <a data-tab-trigger href="#tab3">
-          Tab Trigger 3
-        </a>
-      </li>
-    </ul>
+      <div>
+        <section data-tab-content hidden id="tab1">
+          <h2>Tab Title 1</h2>
+          <p>Tab Content 1</p>
+        </section>
 
-    <div>
-      <section data-tab-content hidden id="tab1">
-        <h2>Tab Title 1</h2>
-        <p>Tab Content 1</p>
-      </section>
+        <section data-tab-content hidden id="tab2">
+          <h2>Tab Title 2</h2>
+          <p>Tab Content 2</p>
+        </section>
 
-      <section data-tab-content hidden id="tab2">
-        <h2>Tab Title 2</h2>
-        <p>Tab Content 2</p>
-      </section>
-
-      <section data-tab-content hidden id="tab3">
-        <h2>Tab Title 3</h2>
-        <p>Tab Content 3</p>
-      </section>
+        <section data-tab-content hidden id="tab3">
+          <h2>Tab Title 3</h2>
+          <p>Tab Content 3</p>
+        </section>
+      </div>
     </div>
   </div>
   <script src="dist/js/main-min.js"></script>
   <script>
-    const myNewTabs = new TinyTabs('.tinytabs')
+    const myNewTabs = new TinyTabs('.tinytabs-minimal')
   </script>
 </body>
 
