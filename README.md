@@ -1,6 +1,6 @@
 # TinyTabs
 
-No-frills tabs in ~560 bytes (minified and gzipped).
+No-frills tabs in ~800 bytes (minified and gzipped).
 
 Credit goes to [EJ Mason](http://www.ejmason.com/tabbed-interfaces/) for accessibility features (still a work in progress for TinyTabs).
 
