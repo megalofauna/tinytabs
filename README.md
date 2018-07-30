@@ -76,7 +76,7 @@ You can pass in an optional options object to the constructor in order to use yo
 | tabTrigger            | takes a valid CSS selector                                    |
 | tabContent            | takes a valid CSS selector                                    |
 | tabTriggerActiveClass | takes a valid CSS selector reference (no `.`).                |
-| equalizeTabHeight     | takes Boolean value of `true` or `false` (default is `false`) |
+| equalizeTabHeight     | takes Boolean value of `true` or `false` (default is `false`). This is still a buggy and experimental feature |
 
 ## Options Example
 
