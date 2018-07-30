@@ -1,24 +1,40 @@
+'use strict';
+
 (function () {
+  var demoContainers = document.querySelectorAll('.demo-container');
+  var demoTitle = document.querySelector('.demo-title');
+  var demoClass = document.querySelector('.demo-class');
+  var themeButtons = Array.from(document.querySelectorAll('.jsThemeButton'));
 
-  const demoTitle = document.querySelector('.demo-title')
-  const demoClass = document.querySelector('.demo-class')
-  const themeButtons = Array.from(document.querySelectorAll('.jsThemeButton'))
+  var setDemoClass = demoClass.getAttribute('class').split(' ');
+  themeButtons.forEach(function (themeButton) {
 
-  themeButtons.forEach(themeButton => {
-    themeButton.addEventListener('click', (e) => {
+    var themeAttribute = themeButton.getAttribute('data-theme-class');
+    if (themeAttribute === setDemoClass[1]) {
+      document.querySelector('[data-theme-class=' + themeAttribute + ']').classList.add('theme-button-active');
+    }
 
-      themeButtons.forEach(themeButton => {
+    themeButton.addEventListener('click', function (e) {
+      themeButtons.forEach(function (themeButton) {
         themeButton.classList.remove('theme-button-active');
-      })
+      });
 
-      const theme = e.currentTarget
-      const themeClass = theme.getAttribute('data-theme-class')
-      const themeTitle = theme.innerHTML
-      demoTitle.innerHTML = 'The "' + themeTitle + '"'
-      demoClass.setAttribute('class', themeClass)
-      theme.classList.add('theme-button-active')
-    })
-  })
-})()
+      var theme = e.currentTarget;
+      var themeClass = theme.getAttribute('data-theme-class');
+      var themeTitle = theme.innerHTML;
+      demoTitle.innerHTML = 'The "' + themeTitle + '"';
+      demoClass.setAttribute('class', themeClass + " demo-class");
+      theme.classList.add('theme-button-active');
 
-
+      demoContainers.forEach(function (demoContainer) {
+        demoContainer.classList.remove('reveal-opacity');
+        var demo = demoContainer.querySelector('.demo-class');
+        if (demo.classList.contains(themeClass)) {
+          setTimeout(function () {
+            demo.closest('.demo-container').classList.add('reveal-opacity');
+          }, 125);
+        }
+      });
+    });
+  });
+})();

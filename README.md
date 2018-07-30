@@ -71,11 +71,12 @@ That's it. But that's not all!
 
 You can pass in an optional options object to the constructor in order to use your own custom CSS selectors in preference to the defaults.
 
-| Options               | Notes                                          |
-| --------------------- | ---------------------------------------------- |
-| tabTrigger            | takes a valid CSS selector                     |
-| tabContent            | takes a valid CSS selector                     |
-| tabTriggerActiveClass | takes a valid CSS selector reference (no `.`). |
+| Options               | Notes                                                         |
+| --------------------- | ------------------------------------------------------------- |
+| tabTrigger            | takes a valid CSS selector                                    |
+| tabContent            | takes a valid CSS selector                                    |
+| tabTriggerActiveClass | takes a valid CSS selector reference (no `.`).                |
+| equalizeTabHeight     | takes Boolean value of `true` or `false` (default is `false`) |
 
 ## Options Example
 
