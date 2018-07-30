@@ -1,4 +1,4 @@
-dist/js/main.js
+dist/js/main-debug.js
 src/css/
 node_modules/
 src/js/ie11-array-from-polyfill.js
