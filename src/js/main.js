@@ -6,12 +6,31 @@ function TinyTabs(tabSelector, options = {}) {
     tabList: tabbedComponent.querySelector('ul'),
     tabTrigger: '[data-tab-trigger]',
     tabContent: '[data-tab-content]',
-    tabTriggerActiveClass: 'is-active'
+    tabTriggerActiveClass: 'is-active',
+    equalizeTabHeight: false
   }
 
   const applied = Object.assign({}, defaults, options)
   const tabTriggers = Array.from(tabbedComponent.querySelectorAll(applied.tabTrigger))
   const tabContents = Array.from(tabbedComponent.querySelectorAll(applied.tabContent))
+
+  const setEqualHeight = () => {
+    let tallest = 0
+    tabContents.forEach(tabContent => {
+      tabContent.removeAttribute('hidden')
+      let currentHeight = tabContent.offsetHeight
+      console.log(tallest)
+      if (currentHeight > tallest) {
+        tallest = currentHeight
+      }
+      tabContent.style.height = tallest + 'px'
+      tabContent.setAttribute('hidden', '')
+    })
+  }
+
+  if (applied.equalizeTabHeight === true) {
+    setEqualHeight()
+  }
 
   tabContents[0].removeAttribute('hidden')
   tabContents[0].removeAttribute('aria-hidden')
@@ -35,13 +54,14 @@ function TinyTabs(tabSelector, options = {}) {
       let targetContent = tabbedComponent.querySelector(id)
 
       tabTriggers.forEach(tabTrigger => {
-        tabTrigger.classList.remove(applied.tabTriggerActiveClass);
+        tabTrigger.classList.remove(applied.tabTriggerActiveClass)
         tabTrigger.removeAttribute('aria-selected')
       })
 
       tabContents.forEach(tabContent => {
         tabContent.setAttribute('hidden', '')
         tabContent.setAttribute('aria-hidden', 'true')
+
       })
 
       tabTrigger.classList.add(applied.tabTriggerActiveClass)
@@ -58,5 +78,6 @@ function TinyTabs(tabSelector, options = {}) {
   separator.setAttribute('aria-label', 'End of')
   tabbedComponent.appendChild(separator)
 }
+
 
 

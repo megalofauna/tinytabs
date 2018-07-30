@@ -15,8 +15,18 @@
   <h1>TinyTabs</h1>
   <p class="tagline">No-frills tabs in ~600 bytes (minified and gzipped).</p>
 
+
+  <div class="theme-switcher-container">
+    <h2>Choose a theme</h2>
+    <div class="theme-switcher">
+      <button data-theme-class="tinytabs-nostyle" class="jsThemeButton theme-button theme-button-active">No Style</button>
+      <button data-theme-class="tinytabs-basic" class="jsThemeButton theme-button">Basic</button>
+    </div>
+  </div>
+
   <div class="demo-container">
-    <div class="tinytabs-minimal">
+    <h3 class="demo-title">The "No Style"</h3>
+    <div class="demo-class tinytabs-nostyle">
       <ul>
         <li>
           <a data-tab-trigger class="is-active" href="#tab1">
@@ -53,9 +63,12 @@
       </div>
     </div>
   </div>
+
+
   <script src="dist/js/main-min.js"></script>
+  <script src="dist/js/themes.js"></script>
   <script>
-    const myNewTabs = new TinyTabs('.tinytabs-minimal')
+    const nostyle = new TinyTabs('.tinytabs-nostyle')
   </script>
 </body>
 
