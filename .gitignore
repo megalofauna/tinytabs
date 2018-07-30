@@ -1,7 +1,7 @@
 dist/js/main-debug.js
 src/css/
 node_modules/
-src/js/ie11-array-from-polyfill-debug.js
+dist/js/ie11-array-from-polyfill-debug.js
 .babelrc
 gulpfile.js
 package-lock.json
