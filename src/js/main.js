@@ -37,31 +37,33 @@ function TinyTabs(tabSelector, options = {}) {
   tabTriggers[0].setAttribute('aria-selected', 'true')
   applied.tabList.setAttribute('aria-role', 'tablist')
 
-  tabTriggers.forEach(tabTrigger => {
-    tabTrigger.setAttribute('role', 'tab')
-    tabTrigger.parentNode.setAttribute('aria-role', 'presentation')
-  })
-
   tabContents.forEach(tabContent => {
     tabContent.setAttribute('aria-role', 'tabpanel')
-    tabContent.setAttribute('aria-hidden', "")
+    tabContent.setAttribute('aria-hidden', "true")
   })
 
   tabTriggers.forEach(tabTrigger => {
+
+    tabTrigger.setAttribute('role', 'tab')
+    tabTrigger.parentNode.setAttribute('aria-role', 'presentation')
+
     tabTrigger.addEventListener('click', e => {
       e.preventDefault();
       let id = tabTrigger.getAttribute('href')
       let targetContent = tabbedComponent.querySelector(id)
 
       tabTriggers.forEach(tabTrigger => {
-        tabTrigger.classList.remove(applied.tabTriggerActiveClass)
-        tabTrigger.removeAttribute('aria-selected')
+        if (tabTrigger.getAttribute('id') !== id) {
+          tabTrigger.classList.remove(applied.tabTriggerActiveClass)
+          tabTrigger.removeAttribute('aria-selected')
+        }
       })
 
       tabContents.forEach(tabContent => {
-        tabContent.setAttribute('hidden', '')
-        tabContent.setAttribute('aria-hidden', 'true')
-
+        if (tabContent !== targetContent) {
+          tabContent.setAttribute('hidden', '')
+          tabContent.setAttribute('aria-hidden', 'true')
+        }
       })
 
       tabTrigger.classList.add(applied.tabTriggerActiveClass)
